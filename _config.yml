@@ -1,5 +1,11 @@
 baseurl: /smart2-doc
 pygments: true
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 redcarpet:
   extensions:
     - hard_wrap
