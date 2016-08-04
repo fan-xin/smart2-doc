@@ -1,5 +1,6 @@
 ---
 layout: index
+title: Smart2-doc
 ---
 
 #Overview
