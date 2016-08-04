@@ -27,9 +27,41 @@ Smart2 now is managed on Github. You can get smart2 from [GitHub](https://github
 
 ------
 
-#Installation
+#How to setup smart2
 
-Need to update...
+##Installation
+
+##Global Setting
+
+------
+
+#First use smart2
+
+
+##Prepare
+
+
+##Create rootfs for target device
+
+
+##deploy smart2 on target device
+
+
+##Setup channel
+
+
+##Update Package
+
+
+------
+
+#Smart2 Command
+
+------
+
+
+#TroubleShooting
+
 
 ------
 
