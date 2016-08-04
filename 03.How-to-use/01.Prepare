@@ -1,0 +1,58 @@
+      You should construct the environment before doing install/remove/search operations. 
+
+      Smart2 provides a script named enviroment-smart.sh to do it automaticly.
+      It can help you to complete the following jobs:
+        - Build pseudo environment.
+        - Configure DB settings for packages sources (e.g. rpm, deb).
+        - Configure smart2 settings for packages sources (e.g. rpm, deb).
+        - Add channels for each packages source.
+   
+      You can configure your smart2 environment as the following: 
+      -------------------------------------------------------------------
+       $ . enviroment-smart.sh ROOTFS_DIR PACKAGES_DIR
+      -------------------------------------------------------------------
+      There must be two parameters for enviroment-smart.sh:
+
+      1) ROOTFS_DIR: The rootfs directory where you want to install packages.
+
+         Note
+           * ROOTFS_DIR must be absolute path.
+           * If it doesn't exist, it will be created.
+
+      2) PACKAGES_DIR: The packages sources directory. There can be multiple packages sources
+                       in this directory.
+
+         Note
+           Smart2 manage packages by repodata, make sure there is repodata in every sources
+           directory under PACKAGES_DIR.
+           
+      For example:
+        If you build x86 by Yocto, there will be three packages sources for x86.
+        And there is a repodata in each packages sources:
+        -------------------------------------------------------------------
+         # tree /home/test/x86_rpm/ | grep -v "\.rpm"
+           /home/test/x86_rpm/
+           |-- all
+           |   |-- repodata
+           |   |   |-- filelists.xml.gz
+           |   |   |-- other.xml.gz
+           |   |   |-- primary.xml.gz
+           |   |   |-- repomd.xml
+           |-- i586
+           |   |-- repodata
+           |   |   |-- filelists.xml.gz
+           |   |   |-- other.xml.gz
+           |   |   |-- primary.xml.gz
+           |   |   |-- repomd.xml
+           |-- qemux86
+           |   |-- repodata
+           |   |   |-- filelists.xml.gz
+           |   |   |-- other.xml.gz
+           |   |   |-- primary.xml.gz
+           |   |   |-- repomd.xml
+        -------------------------------------------------------------------
+
+        You can configure your smart2 environment for x86 by the following:
+        -------------------------------------------------------------------
+         $ . enviroment-smart.sh /home/test/x86_rootfs /home/test/x86_rpm
+        -------------------------------------------------------------------
