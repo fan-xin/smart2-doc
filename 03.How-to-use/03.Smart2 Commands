@@ -1,0 +1,10 @@
+      Besides "tgui", you also can manage packages by command line with the option 
+      "--rootfs-dir".
+      For example:
+      -------------------------------------------------------------------
+       $ smart --rootfs-dir=/home/test/x86-rootfs install pkgname
+       $ smart --rootfs-dir=/home/test/x86-rootfs remove pkgname
+       $ smart --rootfs-dir=/home/test/x86-rootfs query '*kgnam*'
+      -------------------------------------------------------------------
+      More commands please reference to doc/ or http://labix.org/smart/howto.
+  		
