@@ -1,6 +1,6 @@
 baseurl: /smart2-doc
 pygments: true
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions:
     - hard_wrap
