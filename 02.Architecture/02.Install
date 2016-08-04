@@ -1,0 +1,21 @@
+      Cd into smart2 directory and execute the following commands as root:
+      -------------------------------------------------------------------
+       # python setup.py build
+       # python setup.py install
+      -------------------------------------------------------------------
+      Or you can use the supplied Makefile:
+      -------------------------------------------------------------------
+       # make
+       # make install
+      -------------------------------------------------------------------
+
+      Note
+        After install you have to change the interpreter from "#!/usr/bin/python" to 
+        "#!/usr/bin/env python" in your smart2 command.
+        -----------------------------------------------------------------
+         $ whereis smart
+           smart: /opt/bin/smart
+         $ cat /opt/bin/smart
+           #!/usr/bin/env python
+           ......
+        -----------------------------------------------------------------
