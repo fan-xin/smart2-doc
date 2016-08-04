@@ -1,5 +1,5 @@
 baseurl: /smart2-doc
-pygments: true
+rouge: true
 markdown: kramdown
 
 kramdown:
