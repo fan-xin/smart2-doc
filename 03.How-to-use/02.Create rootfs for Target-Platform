@@ -1,0 +1,124 @@
+      Smart2 supports a new interface named "tgui" which can 
+      help you to customize your rootfs under character terminal in your development machine.
+	  
+      You will enter the tgui insterface with the option "--interface=tgui".
+      For example:
+      -------------------------------------------------------------------
+       $ smart --rootfs-dir=$ROOTFS_DIR  --interface=tgui
+      -------------------------------------------------------------------
+      Note
+        --rootfs-dir: rootfs directory that specified by enviroment-smart.sh.
+
+      After execute the above command, you can enter the interface of tgui:
+      
+      1) Select install type
+         Smart2 supports three kinds of install type:
+         - install all
+           By default, all pacakges will be selected.
+         - Busybox base
+           By default, only busybox packages will be selected.
+         - customize
+           By default, no packages will be selected.
+
+ 
+      2) Smart2 can help you filter GPLv3.
+         If you select "install all" or "customize" in above, smart2 will ask you whether 
+         you want to install packages which license is GPLv3.
+         - No  : GPLv3 packages will not be selected and not display in the next step.
+         - Yes : GPLv3 packages can be selected as same as the other packages.
+        
+      3) customize packages
+        
+        ------------------------------------- Select package -------------------------------------
+        |                                                                                        |
+        | [I] zip                                                                                |
+        | [*] zabbix                                                                             |
+        | [I] xz                                                                                 |
+        | [*] xwud                                                                               |
+        | [*] xwininfo                                                                           |
+        | [*] xwd                                                                                |
+        | [*] xvinfo                                                                             |
+        | [*] xterm                                                                              |
+        | [*] xstdcmap                                                                           |
+        | [*] xsetroot                                                                           |
+        | [*] xsetmode                                                                           |
+        | [*] xset                                                                               |
+        | [*] xserver-xorg-xwayland                                                              |
+        | [*] xserver-xorg-xvfb                                                                  |
+        | [I] xserver-xorg-utils                                                                 |
+        | [I] xserver-xorg-module-libwfb                                                         |
+        | [I] xserver-xorg-module-libint10                                                       |
+        | [*] xserver-xorg-module-exa                                                            |
+        | [*] xserver-xorg-extension-glx                                                         |
+        | [*] xserver-xorg                                                                       |
+        | [I] xserver-xf86-config                                                                |
+        | [*] xrestop                                                                            |
+        | [*] xrefresh                                                                           |
+        | -------------------------------------------------------------------------------------- |
+        | All Package [2609]    Installed Packages [1264] Selected Packages [2609]               |
+        | -------------------------------------------------------------------------------------- |
+        | SPACE/ENTER:select/unselect  R:seaRch N:Next  B:Back  I:Info  X:eXit                   |
+        ------------------------------------------------------------------------------------------
+
+        Note
+          -  [] Means the package has not been selected and installed. If you want to install it, you can 
+                select it by pressing enter.
+          - [*] Means the package has been selcted and will be installed. If you don't want to install it,
+                you can cancel by pressing enter.
+          - [I] Means the package has been installed in your rootfs. You can't select/unselect it in tgui.
+                If you want to uninstall it.Please use the following command after exiting tgui.
+                $ smart --rootfs-dir=/home/test/x86-rootfs remove pkgname
+
+          - Next: If you press "N" or "n" in the interface, it will go to the next step.
+		   
+      4) customize packages type
+         You can select the package type that you want to install into rootfs.
+        
+        ---------------------------- customize special type packages ----------------------------  
+        |                                                                                        |
+        | locale [ ]                                                                             |
+        | dev [ ]                                                                                |
+        | doc [ ]                                                                                |
+        | dbg [ ]                                                                                |
+        | staticdev [ ]                                                                          |
+        | ptest [ ]                                                                              |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        |                                                                                        |
+        | -------------------------------------------------------------------------------------- |
+        | SPACE/ENTER:select/unselect  N:Next  B:Back  I:Info  X:eXit                            |
+        ------------------------------------------------------------------------------------------
+
+        Note
+          You can get details about the package type by pressing "I" or "i".
+	
+      5) Confirm selection
+
+         After you confirming your customization, the installation will begin.
+
+      6) Confirm installation
+
+         To make sure the files in rootfs have correct uid and gid, notice that:
+          * When rootfs is finished, please compress it into a tarball in the
+            current terminal to keep the pseudo environment.
+          * When unpack rootfs, please use sudo command with "--numeric-owner" option.
+
+            For example:
+            -------------------------------------------------------------------
+             $ . enviroment-smart.sh /home/test/x86_rootfs /home/test/x86_rpm
+             $ smart --rootfs-dir=/home/test/x86_rootfs  --interface=tgui
+             $ cd /home/test/
+             $ tar cvf - x86-rootfs | (cd $DEST_DIR ;sudo tar xvf - --numeric-owner)
+            -------------------------------------------------------------------
