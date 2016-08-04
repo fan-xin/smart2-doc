@@ -11,9 +11,9 @@ Smart2 is a package manager that based on smart. Smart2 support all the funtions
 
 #New Features
 
-* A new interface named "tgui" can show you a gui on your character terminal.
+  * A new interface named "tgui" can show you a gui on your character terminal.
 
-* Supports customizing your target rootfs on host development machine.
+  * Supports customizing your target rootfs on host development machine.
    
 ###Note
 
