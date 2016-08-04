@@ -1,0 +1,13 @@
+      1) The dependencies are same as smart
+         Smart2 is based on smart, so please make sure the prerequisites for smart have been installed.
+         Please refrence to http://labix.org/smart/howto to obtain details.
+
+      2) Dependencies for smart2 new features.
+         - python-newt:  the snack module depended by "tgui" graphic interface.
+
+      Note
+        In some cases (e.g. Cross-Platform), maybe you can not use the above command
+        which belongs to host directly. You should build a special one for your target-platform,
+        and make sure it's available in your toolchain for Cross-Platform.
+
+        E.g, for Yocto user, you should install the toolchain firstly
