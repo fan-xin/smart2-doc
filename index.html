@@ -5,13 +5,6 @@ title: Smart2 Manual
 
 <h2>{{ page.title }}</h2>
 
-<ul>
-
-{% for post in site.posts %}
-
-<li> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
-{% endfor %}
 1. Overview
 
     Smart2 is a package manager that based on smart. Smart2 support all the 
@@ -302,6 +295,11 @@ title: Smart2 Manual
       More commands please reference to doc/ or http://labix.org/smart/howto.
   		
 
+{% for post in site.posts %}
+
+<li> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+{% endfor %}
 
 
 
