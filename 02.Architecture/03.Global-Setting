@@ -1,0 +1,21 @@
+      1) In Cross-Platform case, make sure the required commands can be invoked preferentially.
+         For example, you can do it by the following command for Yocto-User
+         -----------------------------------------------------------------------
+          # source TOOLCHAIN/environment-setup-i586-poky-linux
+         -----------------------------------------------------------------------
+
+      2) Make sure the following environment variable point to correct path.
+         -----------------------------------------------------------------------
+          # export RPM_USRLIBRPM=/usr/lib/rpm
+          # export RPM_ETCRPM=/etc/rpm
+          # export RPM_LOCALEDIR=/usr/share/locale
+         -----------------------------------------------------------------------
+
+        Note
+          In Cross-Platform case, maybe you should customize these variable.
+          E.g. for Yocto user, you should set them as following.
+          -------------------------------------------------------------------
+           # export RPM_USRLIBRPM=${OECORE_NATIVE_SYSROOT}/usr/lib/rpm
+           # export RPM_ETCRPM=${SDKTARGETSYSROOT}/etc/rpm
+           # export RPM_LOCALEDIR=${OECORE_NATIVE_SYSROOT}/usr/share/locale
+          -------------------------------------------------------------------
